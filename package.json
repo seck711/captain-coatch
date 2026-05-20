@@ -1,0 +1,9 @@
+{
+  "name": "captain-coatch",
+  "private": true,
+  "description": "Site vitrine Captain Coatch",
+  "scripts": {
+    "start": "npx --yes serve -l 3000",
+    "start:lan": "npx --yes serve -l 3000 --listen 0.0.0.0"
+  }
+}

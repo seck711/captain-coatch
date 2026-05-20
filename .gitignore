@@ -1,0 +1,26 @@
+# Dépendances locales (serveur de dev)
+node_modules/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Variables d'environnement (au cas où)
+.env
+.env.*
+
+# Dossiers de déploiement temporaires
+.netlify/
+.vercel/
+dist/

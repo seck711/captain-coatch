@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="CAF">
+  <rect width="120" height="120" rx="24" fill="#064e3b"/>
+  <circle cx="60" cy="48" r="26" fill="#fbbf24" opacity=".95"/>
+  <path d="M44 48c0-9 7-16 16-16s16 7 16 16-7 16-16 16" fill="none" stroke="#064e3b" stroke-width="3"/>
+  <path d="M52 44l8 8-8 8M68 44l-8 8 8 8" stroke="#064e3b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text x="60" y="98" text-anchor="middle" fill="#ecfdf5" font-family="system-ui,sans-serif" font-size="18" font-weight="800">CAF</text>
+</svg>

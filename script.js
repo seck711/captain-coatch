@@ -38,7 +38,7 @@
   var heroSlides = document.querySelectorAll(".hero-slide");
   if (heroSlides.length > 1) {
     var heroIndex = 0;
-    var heroIntervalMs = 5000;
+    var heroIntervalMs = 3000;
     var heroTimer = null;
 
     function showHeroSlide(index) {

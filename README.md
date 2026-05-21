@@ -16,6 +16,16 @@ Sur téléphone (même Wi‑Fi) : `http://VOTRE_IP_LOCALE:3000` (ex. `http://172
 
 ---
 
+## Performance des photos
+
+Avant chaque déploiement Netlify, les images sont **compressées automatiquement** (`npm run build`).
+
+Sur le site en ligne, Netlify sert en plus des versions **WebP redimensionnées** (CDN images). Le diaporama d’accueil ne charge que la slide visible + la suivante.
+
+En local, pour tester la compression : `npm install` puis `npm run optimize-images`.
+
+---
+
 ## Déployer en ligne (accessible à tous)
 
 Le site est **100 % statique** (HTML, CSS, JS, images). Aucun serveur à gérer. Deux options gratuites :

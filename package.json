@@ -4,6 +4,11 @@
   "description": "Site vitrine Captain Coach",
   "scripts": {
     "start": "npx --yes serve -l 3000",
-    "start:lan": "npx --yes serve -l 3000 --listen 0.0.0.0"
+    "start:lan": "npx --yes serve -l 3000 --listen 0.0.0.0",
+    "optimize-images": "node scripts/optimize-images.mjs",
+    "build": "npm run optimize-images"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
   }
 }

@@ -3,7 +3,7 @@
 
 [build]
   publish = "."
-  command = "echo 'Site statique — aucun build requis'"
+  command = "npm install && npm run build"
 
 [build.environment]
   NODE_VERSION = "20"

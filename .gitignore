@@ -1,6 +1,9 @@
 # Dépendances locales (serveur de dev)
 node_modules/
 
+# WebP générés au build (Netlify / npm run optimize-images)
+images/**/*.webp
+
 # Fichiers système
 .DS_Store
 Thumbs.db

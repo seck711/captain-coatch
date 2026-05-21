@@ -1,6 +1,6 @@
-# Captain Coatch — site vitrine
+# Captain Coach — site vitrine
 
-Site vitrine statique pour **Tanor** (« Captain Coatch »), préparateur physique multi-sports.
+Site vitrine statique pour **Tanor** (« Captain Coach »), préparateur physique multi-sports.
 
 ## Voir le site en local
 
@@ -25,9 +25,9 @@ Le site est **100 % statique** (HTML, CSS, JS, images). Aucun serveur à gérer.
 1. Créez un compte sur [netlify.com](https://www.netlify.com/).
 2. **Glisser-déposer** le dossier du projet sur [app.netlify.com/drop](https://app.netlify.com/drop).
 3. Netlify vous donne une URL du type `https://random-name.netlify.app`.
-4. Renommez le site dans **Site settings → Domain management** (ex. `captain-coatch.netlify.app`).
+4. Renommez le site dans **Site settings → Domain management** (ex. `captain-coach.netlify.app`).
 
-**Mise à jour après déploiement :** remplacez `https://captain-coatch.netlify.app` par votre vraie URL dans :
+**Mise à jour après déploiement :** remplacez `https://captain-coach.netlify.app` par votre vraie URL dans :
 
 - `index.html` (balises `canonical`, `og:url`, `og:image`, `twitter:image`)
 - `robots.txt` (ligne `Sitemap`)
@@ -39,9 +39,9 @@ Le site est **100 % statique** (HTML, CSS, JS, images). Aucun serveur à gérer.
 cd "C:\Users\abdoulaye.seck\Desktop\captain coatch"
 git init
 git add .
-git commit -m "Site vitrine Captain Coatch"
+git commit -m "Site vitrine Captain Coach"
 git branch -M main
-git remote add origin https://github.com/VOTRE_COMPTE/captain-coatch.git
+git remote add origin https://github.com/VOTRE_COMPTE/captain-coach.git
 git push -u origin main
 ```
 
@@ -51,14 +51,14 @@ Puis sur Netlify : **Add new site → Import from Git** → choisissez le dépô
 
 1. Poussez le code sur GitHub (commandes ci-dessus).
 2. **Settings → Pages → Source :** branche `main`, dossier `/ (root)`.
-3. URL : `https://VOTRE_COMPTE.github.io/captain-coatch/`
+3. URL : `https://VOTRE_COMPTE.github.io/captain-coach/`
 4. Mettez à jour les URLs dans `index.html`, `robots.txt` et `sitemap.xml`.
 
 ---
 
 ## Nom de domaine personnalisé (optionnel)
 
-Sur Netlify ou GitHub Pages, vous pouvez ajouter un domaine acheté (ex. `captaincoatch.com`) dans les paramètres du site. Netlify configure le HTTPS automatiquement.
+Sur Netlify ou GitHub Pages, vous pouvez ajouter un domaine acheté (ex. `captaincoach.com`) dans les paramètres du site. Netlify configure le HTTPS automatiquement.
 
 ---
 

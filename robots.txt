@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://captain-coatch.netlify.app/sitemap.xml
+Sitemap: https://captain-coach.netlify.app/sitemap.xml

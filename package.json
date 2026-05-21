@@ -1,7 +1,7 @@
 {
-  "name": "captain-coatch",
+  "name": "captain-coach",
   "private": true,
-  "description": "Site vitrine Captain Coatch",
+  "description": "Site vitrine Captain Coach",
   "scripts": {
     "start": "npx --yes serve -l 3000",
     "start:lan": "npx --yes serve -l 3000 --listen 0.0.0.0"

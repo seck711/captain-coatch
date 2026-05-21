@@ -1,4 +1,4 @@
-/* Captain Coatch — vitrine */
+/* Captain Coach — vitrine */
 :root {
   --bg: #07090f;
   --bg-elevated: #0e121c;
@@ -14,7 +14,7 @@
   --radius-xl: 1.75rem;
   --font-display: "Bebas Neue", system-ui, sans-serif;
   --font-body: "Outfit", system-ui, sans-serif;
-  --header-h: 4.25rem;
+  --header-h: 4.75rem;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -99,16 +99,42 @@ code {
 }
 
 .logo {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  letter-spacing: 0.04em;
-  color: var(--text);
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0.35rem 0.5rem 0.35rem 0;
   text-decoration: none;
-  text-transform: uppercase;
+  line-height: 0;
+  flex-shrink: 0;
 }
 
-.logo:hover {
-  color: var(--accent);
+.logo-img {
+  display: block;
+  height: 6rem;
+  width: auto;
+  min-width: 11rem;
+  max-width: 18rem;
+  margin: -0.5rem 0;
+  object-fit: contain;
+  object-position: left center;
+  filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.28))
+    drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
+  transition: filter 0.2s, transform 0.2s var(--ease-out);
+}
+
+.logo:hover .logo-img {
+  filter: drop-shadow(0 0 18px rgba(94, 234, 212, 0.35))
+    drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    height: 5rem;
+    min-width: 9rem;
+    max-width: 14rem;
+    margin: -0.35rem 0;
+  }
 }
 
 .site-nav {
@@ -296,7 +322,7 @@ code {
 .hero-inner {
   position: relative;
   z-index: 1;
-  max-width: 52rem;
+  max-width: min(96vw, 80rem);
 }
 
 .hero-kicker {
@@ -310,27 +336,30 @@ code {
 
 .hero-title {
   margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(4.5rem, 14vw, 9rem);
-  line-height: 0.92;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  line-height: 0;
 }
 
-.hero-title-line {
+.hero-title-logo {
   display: block;
+  width: min(96vw, 72rem);
+  height: auto;
+  max-height: clamp(14rem, 42vw, 24rem);
+  object-fit: contain;
+  object-position: left center;
+  vertical-align: top;
+  filter: drop-shadow(0 0 64px rgba(94, 234, 212, 0.45))
+    drop-shadow(0 16px 64px rgba(0, 0, 0, 0.7));
 }
 
-.hero-title-accent {
-  background: linear-gradient(105deg, var(--accent), #fff 55%, var(--accent-dim));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 0 60px var(--accent-glow);
+@media (max-width: 768px) {
+  .hero-title-logo {
+    width: min(94vw, 52rem);
+    max-height: clamp(11rem, 36vw, 18rem);
+  }
 }
 
 .hero-sub {
-  margin: 1.5rem 0 0;
+  margin: 0.5rem 0 0;
   max-width: 36rem;
   font-size: 1.125rem;
   color: var(--muted);
@@ -341,7 +370,7 @@ code {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 2rem;
+  margin-top: 1.25rem;
 }
 
 .btn {
@@ -662,7 +691,7 @@ code {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
 }
 
@@ -693,6 +722,18 @@ code {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.credential-logo--icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.credential-logo--icon svg {
+  width: 2rem;
+  height: 2rem;
 }
 
 .credential-body {
@@ -934,6 +975,157 @@ code {
   gap: 1rem;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-flow: dense;
+}
+
+.gallery-grid--photos {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: auto;
+  align-items: start;
+}
+
+/* Blocs calés sur le ratio réel de chaque photo (pas de min-height) */
+.gallery-grid--photos .gallery-item,
+.gallery-grid--photos .gallery-item-tall,
+.gallery-grid--photos .gallery-item-wide {
+  min-height: 0;
+  grid-row: auto;
+  grid-column: auto;
+}
+
+.gallery-grid--photos .gallery-trigger {
+  min-height: 0;
+  height: auto;
+}
+
+.gallery-grid--photos .gallery-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  vertical-align: top;
+}
+
+@media (max-width: 700px) {
+  .gallery-grid--photos {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery-item--hidden {
+  display: none !important;
+}
+
+/* Carte « Autres photos » en 31e position dans la grille */
+.gallery-item-more {
+  margin: 0;
+  min-height: 0;
+}
+
+.gallery-more-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  min-height: 14rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background-color: var(--bg-elevated);
+  color: var(--text);
+  font-family: var(--font-body);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s var(--ease-out);
+}
+
+.gallery-more-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.gallery-more-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(7, 9, 15, 0.82) 0%,
+    rgba(7, 9, 15, 0.35) 50%,
+    rgba(7, 9, 15, 0.15) 100%
+  );
+  transition: background 0.25s;
+  pointer-events: none;
+}
+
+.gallery-more-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  pointer-events: none;
+}
+
+.gallery-more-card:hover {
+  border-color: rgba(94, 234, 212, 0.45);
+  transform: translateY(-2px);
+}
+
+.gallery-more-card:hover .gallery-more-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(7, 9, 15, 0.78) 0%,
+    rgba(7, 9, 15, 0.3) 55%,
+    rgba(94, 234, 212, 0.1) 100%
+  );
+}
+
+.gallery-more-card:hover .gallery-more-bg {
+  transform: scale(1.04);
+}
+
+.gallery-more-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.gallery-more-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--accent);
+  background: rgba(94, 234, 212, 0.12);
+  border: 1px solid rgba(94, 234, 212, 0.25);
+}
+
+.gallery-more-label {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+.gallery-more-count {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(232, 236, 244, 0.85);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 .gallery-item {

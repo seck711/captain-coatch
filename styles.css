@@ -1719,6 +1719,16 @@ code {
   box-shadow: 0 8px 28px rgba(255, 0, 80, 0.15);
 }
 
+.social-card--snapchat .social-card-icon {
+  background: #fffc00;
+  color: #000;
+}
+
+.social-card--snapchat:hover {
+  background: rgba(255, 252, 0, 0.1);
+  box-shadow: 0 8px 28px rgba(255, 252, 0, 0.18);
+}
+
 .social-card--facebook .social-card-icon {
   background: #1877f2;
 }
